@@ -6,6 +6,22 @@
     <title>My Contacts</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        body {
+            /* Remove background-image */
+            background-color: black; /* Fallback color */
+            overflow: hidden; /* Hide scrollbars */
+        }
+        #bgVideo {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Cover the entire area */
+            z-index: -1; /* Behind all content */
+        }
+    </style>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
         $(document).ready(function() {
@@ -43,8 +59,12 @@
     </script>
 </head>
 <body class="bg-gray-100">
+    <video autoplay loop muted playsinline id="bgVideo">
+        <source src="assets/ml-bg1.mp4" type="video/mp4">
+        Your browser does not support HTML5 video.
+    </video>
     <div class="container mx-auto p-8">
-        <h1 class="text-2xl font-bold mb-4">My Contacts</h1>
+        <h1 class="text-2xl font-bold mb-4 font-mono text-white">My Contacts</h1>
         <div class="grid grid-cols-2 gap-4">
             <div>
                 <form id="contactForm" class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
@@ -73,9 +93,9 @@
                     </div>
                 </form>
             </div>
-            <div>
+            <div class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
                 <h2 class="text-xl font-bold mb-4">Contact List</h2>
-                <div id="contactList">
+                <div id="contactList" class="">
                 </div>
             </div>
         </div>
