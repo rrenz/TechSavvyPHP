@@ -17,7 +17,7 @@
 
         <form method="post" action="process_form.php">
             <label for="userName">Name:</label>
-            <input type="text" id="userName" name="userName" required>
+            <input type="text" id="userName" name="userName" >
             <input type="submit" value="Submit">
         </form>
     </div>
